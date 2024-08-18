@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> Bài tập về nhà buổi 1</title>
+  <style>
+    body {
+      margin: 4cm;
+    }
+  </style>
+</head>
+<body>
+  <h1>1. HTML BASIC</h1>
+
+  <h2>Documents</h2>
+  <p>All HTML documents must start with a document type declaration: <span style="color: red; background-color: ghostwhite;"><code>&lt;!DOCTYPE html&gt;</code></span>.</p>
+  <p>The HTML document itself begins with <span style="color: red; background-color: ghostwhite;"><code>&lt;html&gt;</code></span> and ends with <span style="color: red; background-color: ghostwhite;"><code>&lt;/html&gt;</code></span>.</p>
+  <p>The visible part of the HTML document is between <span style="color: red; background-color: ghostwhite;"><code>&lt;body&gt;</code></span> and <span style="color: red; background-color: ghostwhite;"><code>&lt;/body&gt;</code></span>.</p>
+
+  <h4>Example</h4>
+  <style>
+    .highlight {
+      background-color: yellowgreen; 
+      padding: auto;
+      border: 1px solid black;
+    }
+  </style> 
+  <pre class="highlight"> 
+    <code>
+  &lt;!DOCTYPE html&gt;
+  &lt;html&gt;
+  &lt;body&gt;
+  &lt;h1&gt;This is a heading&lt;/h1&gt;
+  &lt;p&gt;This is a paragraph.&lt;/p&gt;
+  &lt;/body&gt;
+  &lt;/html&gt;
+  </code></pre>
+
+  <h2>The &lt;!DOCTYPE&gt; Declaration</h2>
+  <p>The <span style="color: red; background-color: ghostwhite;"><code>&lt;!DOCTYPE&gt;</code></span> declaration represents the document type, and helps browsers to display web pages correctly.</p>
+  <p>It must only appear once, at the top of the page (before any HTML tags).</p>
+  <p>The <span style="color: red; background-color: ghostwhite;"><code>&lt;!DOCTYPE&gt;</code></span> declaration is not case sensitive.</p>
+  <p>The <span style="color: red; background-color: ghostwhite;"><code>&lt;!DOCTYPE&gt;</code></span> declaration for HTML5 is: <code>&lt;!DOCTYPE html&gt;</code></p>
+
+  <h2>HTML Headings</h2>
+  <p>HTML headings are defined with the <span style="color: red; background-color: ghostwhite;"><code>&lt;h1&gt;</code></span> to <span style="color: red; background-color: ghostwhite;"><code>&lt;h6&gt;</code></span> tags.</p>
+  <p><span style="color: red; background-color: ghostwhite;"><code>&lt;h1&gt;</code></span> defines the most important heading. <span style="color: red; background-color: ghostwhite;"><code>&lt;h6&gt;</code></span> defines the least important heading.</p>
+
+  <h4>Example</h4>
+  <p><span style="color: red; background-color: ghostwhite;"><code>&lt;h1&gt;</code></span>This is heading 1<span style="color: red; background-color: ghostwhite;"><code>&lt;/h1&gt;</code></span></p>
+  <p><span style="color: red; background-color: ghostwhite;"><code>&lt;h2&gt;</code></span>This is heading 2<span style="color: red; background-color: ghostwhite;"><code>&lt;/h2&gt;</code></span></p>
+  <p><span style="color: red; background-color: ghostwhite;"><code>&lt;h3&gt;</code></span>This is heading 3<span style="color: red; background-color: ghostwhite;"><code>&lt;/h3&gt;</code></span></p>
+
+  <h2>HTML Paragraphs</h2>
+    <p>HTML paragraphs are defined with the <span style="color: red; background-color: ghostwhite;"><code>&lt;p&gt;</code></span> tag.</p>
+    <h4>Example:</h4>
+    <style>
+        .highlight {
+          background-color: yellowgreen; 
+          padding: auto;
+          border: 1px solid black;
+        }
+      </style>  
+      
+      <pre class="highlight">
+        <code>
+          &lt;p&gt;This is a paragraph.&lt;p&gt;
+          &lt;p&gt;This is another paragraph.&lt;p&gt;
+        </code>
+      </pre>
+
+    <h2>HTML Links</h2>
+    <p>HTML links are defined with the <span style="color: red; background-color: ghostwhite;"><code>&lt;a&gt;</code></span> tag:</p>
+    <p>The link's destination is specified in the <span style="color: red; background-color: ghostwhite;"><code>href</code></span> attribute:</p>
+    <h4>Example:</h4>
+    <a href="https://hnmu.edu.vn">HNMU</a>
+    <style>
+        .highlight {
+          background-color: yellowgreen; 
+          padding: auto;
+          border: 1px solid black;
+        }
+      </style>  
+      
+      <pre class="highlight">
+        <code>
+          &lt;a href="https://hnmu.edu.vn"&gt;HNMU&lt;/a&gt;
+        </code>
+      </pre>
+
+    <h2>HTML Images</h2>
+    <p>HTML images are defined with the <span style="color: red; background-color: ghostwhite;"><code>&lt;img&gt;</code></span> tag.</p>
+    <p>The <span style="color: red; background-color: ghostwhite;"><code>src</code></span> attribute specifies the path to the image to be displayed.</p>
+    <h4>Example:</h4>
+    <img src="hnmu.jpg" alt="HNMU">
+   <pre class="highlight">
+    <code>
+      &lt;img src="hnmu.jpg" alt="HNMU"&gt;
+    </code>
+   </pre>
+  <h1>2.HTML Elements</h1>
+  <p>HTML elements are the building blocks of HTML pages.</p>
+  <p>With HTML elements you can define different parts of a web page, like headings, paragraphs, links, images, and more.</p>
+  <p></p>
+  <p>The HTML<span><b> element </b></span>is everything from the start tag to the end tag:</p>
+   <pre>
+    <code>
+      &lt;tagname;&gt;content&lt;/tagname&gt;
+    </code>
+   </pre>
+   <table border="1">
+    <tr>
+      <th>Start tag</th>
+      <th>Element content</th>
+      <th>End tag</th>
+    </tr>
+    <tr>
+      <td>&lt;p&gt;</td>
+      <td>This is a paragraph</td>
+      <td>&lt;/p&gt;</td>
+    </tr>
+    <tr>
+      <td>&lt;a href="https://hnmu.edu.vn"&gt;</td>
+      <td>This is a link</td>
+      <td>&lt;/a&gt;</td>
+    </tr>
+    <tr>
+      <td>&lt;h1&gt;</td>
+      <td>This is a heading</td>
+      <td>&lt;/h1&gt;</td>
+    </tr>
+
+   </table>
+<h1>3. HTML Attributes</h1>
+<ul>
+  <li>HTML elements can have attributes</li>
+  <li>Attributes provide additional information about elements</li>
+  <li>Attributes are always specified in the start tag</li>
+  <li>Attributes usually come in name/value pairs like: name="value"</li>
+</ul>
+<h1>4. HTML Headings</h1>
+<h4> Example</h4>
+<pre class="highlight"
+  <p><h1>Heading 1</h1></p>
+  <p><h2>Heading 2</h2></p>
+  <p><h3>Heading 3</h3></p>
+  <p><h4>Heading 4</h4></p>
+  <p><h5>Heading 5</h5></p>
+  <p><h6>Heading 6</h6></p>
+</pre>
+<h1>5. HTML Paragraphs</h1>
+<p>The HTML&lt; p &gt; element defines a paragraph.</p>
+<p>A paragraph always starts on a new line, and is usually a block of text.</p>
+<h4>Example</h4>
+<pre class="highlight">
+  <p>&lt;p&gt;This is a paragraph.&lt;/p&gt;</p>
+  <p>&lt;p&gt;This is another paragraph.&lt;/p&gt;</p>
+</pre>
+
+
+<h1>6. HTML Style</h1>
+<p>The HTML<span style="color: red;"> style </span> attribute is used to add styles to an element, such as color, font, size, and more.</p>
+<h4>Example</h4>
+
+<pre class="highlight">
+  <p style="color: red;">This is a red paragraph.</p>
+  <p style="color: blue;">This is a blue paragraph.</p>
+  <p style="font-size: 20px;">This is a paragraph with a font size of 20px.</p>
+</pre>
+</body>
+</html>
