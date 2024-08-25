@@ -1,0 +1,17 @@
+/* styles.css */
+#menu {
+    background-color: #f0f0f0;
+    /* Thêm các thuộc tính khác cho menu */
+}
+#menu ul {
+    list-style: none;
+    padding: 0;
+}
+#menu ul li {
+    display: inline-block;
+    margin-right: 20px;
+}
+#menu ul li a {
+    text-decoration: none;
+    color: #333;
+}

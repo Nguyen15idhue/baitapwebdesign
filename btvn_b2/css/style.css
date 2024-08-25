@@ -1,0 +1,98 @@
+body {
+    margin: 0; /* Loại bỏ margin mặc định của body */
+    padding: 0; /* Loại bỏ padding mặc định của body */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: justify;
+    font-family: 'Times New Roman', Times, serif;
+    background-color: #f0f0f0;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 60%; /* Điều chỉnh theo nhu cầu */
+    padding: 20px; /* Thêm khoảng cách bên trong */
+    background-color: #ffffff; /* Màu nền của hộp, có thể thay đổi */
+    box-sizing: border-box;
+    margin-top: 20px;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    margin: 20px 0; /* Khoảng cách trên và dưới của ảnh */
+}
+
+.drop-cap {
+    font-size: 1.2em;
+    line-height: 1.6;
+    text-indent: 0; /* Xóa lùi đầu dòng */
+}
+
+.drop-cap::first-letter {
+    font-size: 3.5em;
+    float: left;
+    line-height: 0.8; /* Điều chỉnh chiều cao dòng của chữ cái đầu tiên */
+    margin-right: 0.1em;
+    margin-top: 0.1em; /* Đẩy chữ cái đầu tiên lên để cân chỉnh */
+    font-weight: bold;
+    color: #333;
+}
+.dot {
+    color: #333; /* Màu chấm */
+    font-size: 20px; /* Điều chỉnh kích thước chấm */
+    margin-right: 5px; /* Tạo khoảng cách giữa chấm và chữ */
+}
+.text-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%; /* Đảm bảo chiều rộng bằng với ảnh */
+    background-color: #cccccc;
+    padding: 10px;
+    text-align: center;
+  }
+  .box {
+    display: inline-block;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+a {
+    color: #0078d4;
+    text-decoration: none;
+}
+
+.note {
+    background-color: #f0f0f0;
+    padding: 10px;
+    margin: 20px 0;
+    border-radius: 5px;
+}
+
+.menu {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.menu-item {
+    padding: 10px 20px;
+    background-color: #f0f0f0;
+    border: none;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.menu-item.active {
+    background-color: #0078d4;
+    color: white;
+}
+
+.content {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 5px;
+}

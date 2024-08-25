@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập 2.3</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            text-align: justify;
+            margin-top: 20px;
+            display: flexbox;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+        }
+        .container {
+            width: 60%;
+            padding: 20px;
+            margin: 10px 0;
+            display: flexbox;
+            flex-direction: column;
+            align-items: center;
+            margin: 0 auto;
+            
+        }
+        .content-wrapper {
+            padding: 10px;
+            margin: 10px 0;
+            background-color: aliceblue;
+        }
+        .font-size {
+            font-size: 200%;
+        }
+        .content {
+            border: 1px solid #000;
+            padding: 20px;
+            margin: 10px 0;
+            margin-top: 30px;
+        }
+        input[type="radio"] {
+            display: none;
+        }
+        label {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px;
+            background-color: #ddd;
+            cursor: pointer;
+        }
+        #windows11:checked ~ .windows11-content,
+        #windows10:checked ~ .windows10-content {
+            display: block;
+        }
+        .windows11-content,
+        .windows10-content {
+            display: none;
+        }
+        .btn {
+            display: inline-block;
+            background-color: #007BFF; /* Màu xanh */
+            color: white; /* Màu chữ trắng */
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none; /* Bỏ gạch chân */
+            border-radius: 5px;
+            transition: color 0.3s, text-decoration 0.3s;
+        }
+
+        /* Hiệu ứng khi di chuột đến nút */
+        .btn:hover {
+            color: white; /* Giữ màu chữ trắng */
+            text-decoration: underline; /* Gạch chân chữ */
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <br>
+        <p style="font-size: 300%;">What's new in recent Windows updates</p>
+        <p><i>Windows 11 Windows 10</i></p>
+        <p>New features in recent Windows updates will help you customize your PC, increase security, and get more creative with Windows. With these updates, it'll also be easier to get things done on your PC and across your other devices, including syncing to Android phones (7.0 or later).</p>
+        <p>
+            Ready to start? See
+            <a href="https://support.microsoft.com/en-us/windows/get-the-latest-windows-update-7d20e88c-0568-483a-37bc-c3885390d212">Get the latest Windows update.
+    
+            </a>
+        </p>
+        <div class="content-wrapper">
+            <p><strong>Note: </strong>Features and app availability may vary by region.</p>
+        </div>
+        <input type="radio" id="windows11" name="content" checked>
+        <label for="windows11">Windows 11</label>
+        <input type="radio" id="windows10" name="content">
+        <label for="windows10">Windows 10</label>
+    
+        <div class="content windows11-content">
+            <br>
+            <div class="font-size">
+                <p>What's new in Windows 11 2023 update</p>
+                <br>
+                <p>Explore what's new in recent updates</p>
+            </div>
+                <img src="https://support.content.office.net/en-us/media/d718b740-cab7-4ed9-b9cd-2bc200836d13.png">
+                <p>
+                    Check out what’s been released in the last year to help you get things done more quickly. If you don’t have these features yet, check for update availability in
+                    <b>Settings > Windows Update.</b>
+                </p>
+            <div class="font-size">
+                <p>Always have the latest features</p>
+            </div>
+            <img src="https://support.content.office.net/en-us/media/390d7ff0-4be9-42a0-bf31-fb7ceee089b6.png">
+            <p>
+                To get the latest non-security updates as soon as possible for your PC, select
+                <b>Settings > Windows Update > Get the latest updates as soon as they’re available.</b>
+            </p>
+            <button class="btn"><a href="ms-settings:windowsupdate">Open Window Updates</a></button>
+            <div class="font-size">
+                <p>Use Copilot on Windows for AI assistance</p>
+            </div>
+            <img src="https://support.content.office.net/en-us/media/82caca01-ad9b-4d44-bfd6-3274eae6cf04.jpg" style="max-width: 100%;">
+            <p>Get answers to complex questions, generate new ideas, summarize pages, quickly change PC settings, and much more.</p>
+            <br>
+            <div class="font-size">
+                <p>A new way to browse your photos</p>
+            </div>
+            <img src="https://support.content.office.net/en-us/media/8adef499-81e9-497d-8664-36d4a35cc994.png" style="max-width: 100%;">
+            <p>Add photos from your phone, your PC, and cloud storage to File Explorer's Gallery to browse them all in one place.</p>
+            <br>
+            <div class="font-size">
+                <p>Find and browse AI hub in the Microsoft Store</p>
+            </div>
+            <img src="https://support.content.office.net/en-us/media/f2ce34f3-8e67-4c70-995e-ab0fdabfa463.png">
+            <p>Use the power of AI to your advantage. Browse apps by different AI developers to help you draft a resume, create beautiful presentations, and plan your next adventure. Explore the AI Hub in Microsoft Store to view what’s available.</p>
+            <div class="btn">
+                <a href="ms-windows-store:">Open Microsoft Store</a>
+            </div>
+            <br>
+            <div class="font-size">
+                <p>Review your key info in Settings </p>      
+            </div> 
+            <img src="https://support.content.office.net/en-us/media/00e35f73-e794-4af9-8f71-57f285e332b7.png" style="max-width: 100%;">
+            <p>Find a snapshot of your PC, get recommendations, and access details like subscription status, cloud storage, and account safety information right from the homepage.</p>
+            <div class="btn">
+                <a href="ms-settings:">Open Settings</a>
+            </div>  
+            <br>
+            <div class="font-size">
+                <p>Type with your voice</p>    
+            </div>    
+            <img src="https://support.content.office.net/en-us/media/eea188ed-b747-47cb-b0d8-d68522dc7a76.png" style="max-width: 100%;">
+            <p>
+                Control your apps, dictate emails, search online, and more using your voice. To get started, select
+                <b>Settings > Accessibility > Voice Access.</b>
+            </p>
+            <p>
+                Use voice typing to convert spoken words into text anywhere you would normally type. Press the
+                <b>Windows Logo key  + H</b>
+                to open voice typing.
+                </p>
+            
+        </div>
+        <div class="content windows10-content">
+            <ul>
+                <li>You'll find a scoped set of improvements in the areas of productivity and management</li>
+                <p></p>
+                <li>Enjoy WPA3 H2E standards support for enhanced Wi-Fi security</li>
+                <p></p>
+                <li>Get GPU compute support in the Windows Subsystem for Linux (WSL) and Azure IoT Edge for Linux on Windows (EFLOW) deployments for machine learning and other compute intensive workflows</li>
+            </ul>
+            <div class="font-size">
+                <p>Stay up to date while staying in your flow</p>
+                
+            </div>
+            <img src="https://support.content.office.net/en-us/media/f5ce6abf-21bf-482a-9efa-6eedbfd9cbdb.png" style="max-width: 100%;">
+            <p>
+                To quickly check in on the latest headlines, weather, sports, and more, open
+                <b>News and interests</b>
+                on the taskbar. Get caught up with a glance, then get back to what you were doing.
+                </p>
+            <a href="https://support.microsoft.com/en-us/windows/stay-up-to-date-with-news-and-interests-a39baa08-7488-4169-9ed8-577238f46f8f">Stay up to date with news and interests</a>
+            <div class="font-size">
+                <p>Choose your favorite color mode</p>
+            </div>
+            <img src="https://support.content.office.net/en-us/media/375a351a-f329-8742-002b-aa2cd4299e7e.png" style="max-width: 100%;">
+            <p>
+                Make your apps and app tiles stand out by switching to Light or Dark mode. Select 
+                <b>Start  > Settings  > Personalization  > Colors.</b>
+                Under
+                <b>Choose your color,</b>
+                select either <b>Light</b> or <b>Dark</b> mode.
+
+                </p>
+            <div class="btn">
+                <a href="ms-settings:personalization-colors?activationSource=SMC-Article-4043948">Set light or dark mode in settings</a>
+
+            </div>
+            <br>
+            <div class="font-size">
+                <p>Keep tabs on your website tabs</p>
+            </div>
+            <img src="https://support.content.office.net/en-us/media/9f69ac78-117e-c34d-9fed-92ab967a2bd7.png" style="max-width: 100%;">
+            <p>When you’re on a frequently-used website and have a lot of tabs open, pin that site to your taskbar. Then, just hover over the pin to see a preview of all the open tabs.</p>
+            <p>
+                To pin website to the taskbar, in Microsoft Edge, go to
+                <b>Settings and more  > More tools > Pin to taskbar </b>
+                </p>
+
+
+            
+            
+            
+
+        </div>
+
+    </div>
+   
+</body>
+</html>
