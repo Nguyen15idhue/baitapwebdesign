@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body {
+                color: #ffffff;
+                font-family: 'Times New Roman', Times, serif;
+                font-size: 1.25rem;
+                text-align: center;
+                padding: 5%;
+                margin: 0;
+            }
+            .container {
+                background-color: #ffffff;
+                color: #000000;
+                font-family: Arial, sans-serif;
+                display: inline;
+            }
+            table {
+            width: 100%; /* Chiều rộng của bảng */
+            border-collapse: collapse; /* Gộp các đường viền của bảng lại với nhau */
+        }
+
+        th, td {
+            border: 1px solid #ddd; /* Viền ô */
+            padding: 8px; /* Khoảng cách trong ô */
+            text-align: left; /* Căn lề trái cho nội dung */
+        }
+
+        thead {
+            background-color: rgb(20, 96, 20); /* Màu nền xanh cho hàng tiêu đề */
+            color: white; /* Màu chữ trắng cho hàng tiêu đề */
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2; /* Màu nền nhạt cho các hàng chẵn */
+        }
+        tbody tr:hover{
+            background-color: #ddd; /* Màu nền nhạt cho các hàng chẵn */
+            opacity: 1;
+        }
+
+        tbody tr {
+            opacity: 0.5; /* Đặt độ mờ mặc định cho nội dung ô */
+            transition: opacity 0.3s; /* Hiệu ứng chuyển tiếp mượt mà khi thay đổi opacity */
+        }
+        </style>
+    </head>
+    <body>
+        <Div class="container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>STT</th>
+                        <th>Họ và tên</th>
+                        <th>Ngày sinh</th>
+                        <th>Quê quán</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Nguyễn Văn A</td>
+                        <td>01/01/1990</td>
+                        <td>Hà Nội</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Nguyễn Văn B</td>
+                        <td>02/02/1991</td>
+                        <td>Hải Phòng</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Nguyễn Văn C</td>
+                        <td>03/03/1992</td>
+                        <td>Đà Nẵng</td>
+                    </tr>
+                </tbody>
+            </table>
+        </Div>
+    </body>
+</html>
