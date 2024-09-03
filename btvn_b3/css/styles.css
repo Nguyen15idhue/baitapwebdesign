@@ -1,0 +1,94 @@
+body {
+    background-color: #0a1e31;
+    color: #ffffff;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.25rem;
+    text-align: center;
+}
+h1{
+    color: rgb(20, 232, 232);
+}
+.container {
+    background-color: #0a1e31;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    font-size: 1.25rem;
+    text-align: center;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 800px;
+    border: #FFD700 1px solid;
+    border-radius: 10px;
+}
+.flex-box {
+    display: flex;
+    align-items: flex-start; /* Căn giữa theo chiều dọc */
+    gap: 50px; /* Khoảng cách giữa avatar và content */
+    margin-top: 20px;
+    justify-content: left;
+    text-align: left;
+}
+
+.avatar img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; /* Tạo avatar hình tròn */
+    border: 3px solid #007BFF;
+    object-fit: cover; /* Đảm bảo ảnh không bị méo */
+    margin-left: 20px;
+}
+
+.content {
+    max-width: 500px;
+}
+
+.content h2 {
+    margin: 0;
+    color: #14E8E8; /* Màu chữ khác cho tiêu đề */
+}
+
+.content p {
+    margin: 5px 0;
+}
+.gif {
+    align-items: flex-end;
+    max-width: 200px;
+
+   
+}
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* Để các nút có thể xuống dòng trên màn hình nhỏ */
+    gap: 10px;
+    margin-bottom: 20px;
+}
+.btn {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+.btn:hover {
+    background-color: goldenrod;
+}
+/* Media Query cho màn hình nhỏ hơn 600px */
+@media (max-width: 600px) {
+    body {
+        font-size: 1rem;
+        padding: 2%;
+    }
+    .container {
+        padding: 5%;
+    }
+    .btn {
+        font-size: 0.875rem;
+        padding: 8px 15px;
+    }
+}
