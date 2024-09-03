@@ -59,6 +59,7 @@ h1 {
 .gif {
     align-items: flex-end;
     max-width: 200px;
+    padding-right: 5%;
 }
 
 .button-container {
