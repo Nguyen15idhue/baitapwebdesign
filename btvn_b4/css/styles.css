@@ -1,0 +1,106 @@
+.menu1{
+    display: flex;
+    list-style-type: none;
+    overflow-x: scroll;
+    white-space: Nowrap;
+    padding: 0;
+    margin: 0;
+    background-color: rgb(36, 45, 36);
+}
+.menu1 li{
+    padding: 10px 20px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.menu1 li a{
+    text-decoration: none;
+    color: white;
+    display: inline;
+
+}
+.menu1 li:hover{
+    background-color: #007BFF;
+}
+#trangchu {
+    background-color: aqua;
+}
+
+.menu2 {
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    overflow-y: scroll;
+    white-space: nowrap;
+    max-height: 800px;
+    padding: 0;
+    margin: 0;
+    background-color: gainsboro;
+    width: 200px;
+    transition: max-height 0.3s ease;
+}
+
+.menu2 li {
+    padding: 10px 20px;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.menu2 li a {
+    text-decoration: none;
+    color: black;
+    display: inline;
+}
+
+.menu2 li:hover {
+    background-color: #afafaf;
+}
+
+#h1 {
+    text-align: justify;
+    font-size: larger;
+}
+
+/* Kiểu dáng cho nút hamburger */
+#hamburger-btn {
+    display: none; /* Ẩn nút trên màn hình lớn */
+    width: 40px;
+    height: 30px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    z-index: 10; /* Đảm bảo nút nằm trên menu */
+  }
+  
+  .bar {
+    display: block;
+    width: 100%;
+    height: 4px;
+    background-color: black;
+    margin: 6px 0;
+    transition: 0.4s;
+  }
+  
+  /* Ẩn menu theo mặc định trên màn hình mobile */
+  @media (max-width: 768px) {
+    .menu2 {
+      position: fixed; /* Thay đổi thành fixed */
+      top: 0;
+      left: 0;
+      width: 200px;
+      height: 100vh;
+      background-color: gainsboro;
+      transform: translateX(-100%); /* Ẩn menu bằng cách di chuyển sang trái */
+      transition: transform 0.3s ease-in-out; /* Thêm transition cho hiệu ứng mượt mà */
+    }
+    .menu2.show {
+        transform: translateX(0); /* Hiển thị menu bằng cách đưa về vị trí ban đầu */
+      }
+  
+    /* Hiển thị nút hamburger trên màn hình mobile */
+    #hamburger-btn {
+      display: block;
+    }
+  }

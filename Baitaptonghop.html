@@ -1,55 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="css/styles.css">
-    </head>
-    <body>
-        <div class="container top-container">
-            <div class="flex-box">
-                <div class="avatar">
-                    <img src="https://img4.thuthuatphanmem.vn/uploads/2020/05/07/anh-phong-canh-buon-chan_060206263.jpg" alt="Avatar">
-                </div>
-                <div class="content">
-                    <h2>Thông tin cá nhân</h2>
-                    <p>Họ và tên: Đỗ Văn Nguyên</p>
-                    <p>Năm sinh: 2005</p>
-                    <p>Địa chỉ: Ba Vì, Hà Nội, Việt Nam</p>
-                    <p>Trường: Đại học Thủ Đô Hà Nội</p>
-                    <p>Ngành: Công nghệ thông tin</p>
-                </div>
-                <div class="gif">
-                    <img src="-nh-ng-cute-unscreen.gif" alt="Avatar">
-                </div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang cá nhân và Bài tập</title>
+    <link rel="stylesheet" href="css/styles.css"> <!-- Liên kết đến file CSS -->
+</head>
+<body>
+    <!-- Menu điều hướng -->
+    <nav class="menu">
+        <ul>
+            <li><a href="#trangcanhan" onclick="showSection('trangcanhan')">Trang cá nhân</a></li>
+            <li><a href="#baitap" onclick="showSection('baitap')">Bài tập</a></li>
+        </ul>
+    </nav>
+
+    <!-- Phần trang cá nhân -->
+    <div id="trangcanhan" class="container section">
+        <div class="flex-box">
+            <div class="avatar">
+                <img src="https://img4.thuthuatphanmem.vn/uploads/2020/05/07/anh-phong-canh-buon-chan_060206263.jpg" alt="Avatar">
             </div>
-    
+            <div class="content">
+                <h2>Thông tin cá nhân</h2>
+                <p>Họ và tên: Đỗ Văn Nguyên</p>
+                <p>Năm sinh: 2005</p>
+                <p>Địa chỉ: Ba Vì, Hà Nội, Việt Nam</p>
+                <p>Trường: Đại học Thủ Đô Hà Nội</p>
+                <p>Ngành: Công nghệ thông tin</p>
+            </div>
+            <div class="gif">
+                <img src="-nh-ng-cute-unscreen.gif" alt="Gif">
+            </div>
         </div>
-        <div class="container bottom-container">
-            <h1>Danh sách bài tập thiết kế web cô Phương</h1>
-            <p>Bài tập buổi 1</p>
-            <div class="button-container">
-                <a class="btn" href="https://nguyen15idhue.github.io/baitapwebdesign/bttl_b1/bttl1.html">BTTL 1</a>
-                <a class="btn" href="https://nguyen15idhue.github.io/baitapwebdesign/btvn_b1/btvn1.html">BTVN 1</a>
-                <a class="btn" href="https://nguyen15idhue.github.io/baitapwebdesign/btvn_b1/btvn2.html">BTVN 2.1</a>
-                <a class="btn" href="https://nguyen15idhue.github.io/baitapwebdesign/btvn_b1/btvn2.2.html">BTVN 2.2</a>
-                <a class="btn" href="https://nguyen15idhue.github.io/baitapwebdesign/btvn_b1/btvn2.3.html">BTVN 2.3</a>
-            </div>
-            <p>Bài tập buổi 2</p>
-            <div class="button-container">
-                <a class="btn" href="https://nguyen15idhue.github.io/baitapwebdesign/btvn_b2/btvn1.html">BTVN 1</a>
-                <a class="btn" href="https://nguyen15idhue.github.io/baitapwebdesign/btvn_b2/btvn2.1.html">BTVN 2.1</a>
-                <a class="btn" href="https://nguyen15idhue.github.io/baitapwebdesign/btvn_b2/btvn2.2.html">BTVN 2.2</a>
-                <a class="btn" href="https://nguyen15idhue.github.io/baitapwebdesign/btvn_b2/btvn2.3.html">BTVN 2.3</a>
-                <a class="btn" href="https://nguyen15idhue.github.io/baitapwebdesign/btvn_b2/btvn3.html">BTVN 3</a>
-            </div>
-            <p>Bài tập buổi 3</p>
-            <div class="button-container">
-                <a class="btn" href="https://nguyen15idhue.github.io/baitapwebdesign/btvn_b3/bai2.html">BTVN 2</a>
-                <a class="btn" href="https://nguyen15idhue.github.io/baitapwebdesign/btvn_b3/bai3.1.html">BTVN 3.1</a>
-                <a class="btn" href="https://nguyen15idhue.github.io/baitapwebdesign/btvn_b3/bai3.2.html">BTVN 3.2</a>
-                <a class="btn" href="https://nguyen15idhue.github.io/baitapwebdesign/btvn_b3/bai3.3.html">BTVN 3.3</a>
-                <a class="btn" href="https://nguyen15idhue.github.io/baitapwebdesign/btvn_b3/bai4.html">BTVN 4</a>
+    </div>
+
+    <!-- Phần bài tập -->
+    <div id="baitap" class="container section" style="display: none;">
+        <h1>Danh sách bài tập thiết kế web cô Phương</h1>
+        <p>Bài tập buổi 1</p>
+        <div class="button-container">
+            <a class="btn" href="https://nguyen15idhue.github.io/baitapwebdesign/bttl_b1/bttl1.html">BTTL 1</a>
+            <a class="btn" href="https://nguyen15idhue.github.io/baitapwebdesign/btvn_b1/btvn1.html">BTVN 1</a>
+            <a class="btn" href="https://nguyen15idhue.github.io/baitapwebdesign/btvn_b1/btvn2.html">BTVN 2.1</a>
+            <a class="btn" href="https://nguyen15idhue.github.io/baitapwebdesign/btvn_b1/btvn2.2.html">BTVN 2.2</a>
+            <a class="btn" href="https://nguyen15idhue.github.io/baitapwebdesign/btvn_b1/btvn2.3.html">BTVN 2.3</a>
         </div>
-    </body>
+        <p>Bài tập buổi 2</p>
+        <div class="button-container">
+            <a class="btn" href="https://nguyen15idhue.github.io/baitapwebdesign/btvn_b2/btvn1.html">BTVN 1</a>
+            <a class="btn" href="https://nguyen15idhue.github.io/baitapwebdesign/btvn_b2/btvn2.1.html">BTVN 2.1</a>
+            <a class="btn" href="https://nguyen15idhue.github.io/baitapwebdesign/btvn_b2/btvn2.2.html">BTVN 2.2</a>
+            <a class="btn" href="https://nguyen15idhue.github.io/baitapwebdesign/btvn_b2/btvn2.3.html">BTVN 2.3</a>
+            <a class="btn" href="https://nguyen15idhue.github.io/baitapwebdesign/btvn_b2/btvn3.html">BTVN 3</a>
+        </div>
+        <p>Bài tập buổi 3</p>
+        <div class="button-container">
+            <a class="btn" href="https://nguyen15idhue.github.io/baitapwebdesign/btvn_b3/bai2.html">BTVN 2</a>
+            <a class="btn" href="https://nguyen15idhue.github.io/baitapwebdesign/btvn_b3/bai3.1.html">BTVN 3.1</a>
+            <a class="btn" href="https://nguyen15idhue.github.io/baitapwebdesign/btvn_b3/bai3.2.html">BTVN 3.2</a>
+            <a class="btn" href="https://nguyen15idhue.github.io/baitapwebdesign/btvn_b3/bai3.3.html">BTVN 3.3</a>
+            <a class="btn" href="https://nguyen15idhue.github.io/baitapwebdesign/btvn_b3/bai4.html">BTVN 4</a>
+        </div>
+        <p>Bài tập buổi 4</p>
+        <div class="button-container">
+            <a class="btn" href="https://nguyen15idhue.github.io/baitapwebdesign/btvn_b4/bai1.html">BTVN 1</a>
+            <a class="btn" href="https://nguyen15idhue.github.io/baitapwebdesign/Baitaptonghop.html">BTVN 2</a>
+        </div>
+    </div>
+
+    <script src="js/scripts.js"></script>
+</body>
 </html>

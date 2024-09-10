@@ -1,12 +1,47 @@
-/* Định dạng chung cho cả desktop và mobile */
 body {
     background-color: #0a1e31;
     color: #ffffff;
     font-family: 'Times New Roman', Times, serif;
     font-size: 1.25rem;
     text-align: center;
-    margin: 0; /* Đảm bảo không có khoảng cách không mong muốn */
-    padding: 0; /* Đảm bảo không có khoảng cách không mong muốn */
+    margin: 0;
+    padding: 0;
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: rgba(10, 30, 49, 0.8); /* Màu nền với độ trong suốt */
+    backdrop-filter: blur(10px); /* Hiệu ứng làm mờ */
+    color: #fff;
+    list-style-type: none;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.menu ul {
+    display: flex;
+    gap: 20px;
+    padding: 0;
+}
+
+.menu li {
+    list-style: none;
+}
+
+.menu li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+
+.menu li a:hover {
+    color: #d7be00;
 }
 
 h1 {
@@ -20,7 +55,8 @@ h1 {
     font-size: 1.25rem;
     text-align: center;
     padding: 20px;
-    margin: 20px auto;
+    margin: 80px auto 20px; /* Đảm bảo phần tử không bị che bởi menu */
+    margin-top: 120px;
     max-width: 800px;
     border: #FFD700 1px solid;
     border-radius: 10px;
@@ -28,19 +64,19 @@ h1 {
 
 .flex-box {
     display: flex;
-    align-items: flex-start; /* Căn giữa theo chiều dọc */
-    gap: 20px; /* Khoảng cách giữa avatar và content */
+    align-items: flex-start;
+    gap: 20px;
     margin-top: 20px;
-    justify-content: center; /* Căn giữa nội dung */
+    justify-content: center;
     text-align: left;
 }
 
 .avatar img {
     width: 150px;
     height: 150px;
-    border-radius: 50%; /* Tạo avatar hình tròn */
+    border-radius: 50%;
     border: 3px solid #007BFF;
-    object-fit: cover; /* Đảm bảo ảnh không bị méo */
+    object-fit: cover;
 }
 
 .content {
@@ -49,7 +85,7 @@ h1 {
 
 .content h2 {
     margin: 0;
-    color: #14E8E8; /* Màu chữ khác cho tiêu đề */
+    color: #14E8E8;
 }
 
 .content p {
@@ -57,7 +93,6 @@ h1 {
 }
 
 .gif {
-    align-items: flex-end;
     max-width: 200px;
     padding-right: 5%;
 }
@@ -66,7 +101,7 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap; /* Để các nút có thể xuống dòng trên màn hình nhỏ */
+    flex-wrap: wrap;
     gap: 10px;
     margin-bottom: 20px;
 }
@@ -87,7 +122,6 @@ h1 {
     background-color: goldenrod;
 }
 
-/* Media Query cho màn hình nhỏ hơn 600px */
 @media (max-width: 600px) {
     body {
         font-size: 1rem;
@@ -99,8 +133,8 @@ h1 {
     }
 
     .flex-box {
-        flex-direction: column; /* Đặt avatar và content theo chiều dọc */
-        align-items: center; /* Căn giữa nội dung */
+        flex-direction: column;
+        align-items: center;
     }
 
     .avatar img {
@@ -112,6 +146,5 @@ h1 {
     .btn {
         font-size: 0.875rem;
         padding: 8px 15px;
-        
     }
 }
