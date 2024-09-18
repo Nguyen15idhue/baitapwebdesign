@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh sách bài viết</title>
+    <style>
+        /* CSS cho bố cục chính */
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        /* CSS cho danh sách bài viết */
+        .posts {
+            width: 500px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .post {
+            background-color: #ccc;
+            padding: 15px;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+        }
+
+        .post img {
+            width: 80px;
+            height: 80px;
+            border-radius: 8px;
+            object-fit: cover;
+        }
+
+        .post-content {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .post-title {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .post-subtitle {
+            font-size: 12px;
+            color: #555;
+        }
+
+        /* CSS cho phần thông tin bên phải */
+        .info {
+            width: 300px;
+        }
+
+        .info img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .info .topics, .info .reference {
+            margin-top: 20px;
+        }
+
+        .info .topics button {
+            padding: 8px 16px;
+            border: none;
+            border-radius: 20px;
+            background-color: #ddd;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+
+        .info .reference {
+            font-size: 14px;
+        }
+
+        /* CSS cho phần phân trang */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            gap: 10px;
+        }
+
+        .pagination button {
+            width: 40px;
+            height: 40px;
+            border: none;
+            border-radius: 10px;
+            background-color: #ccc;
+            color: black;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .pagination button.active {
+            background-color: red;
+            color: white;
+        }
+
+        .pagination button:hover {
+            background-color: #bbb;
+        }
+
+        .pagination button.arrow {
+            background-color: transparent;
+            font-size: 24px;
+        }
+        /* CSS responsive cho mobile */
+@media (max-width: 768px) {
+    /* Chuyển bố cục thành dạng cột (dọc) khi màn hình nhỏ hơn 768px */
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Phần thông tin sẽ đẩy xuống dưới */
+    .info {
+        order: 2; /* Chuyển phần info xuống dưới */
+        width: 100%;
+    }
+
+    /* Danh sách bài viết chiếm toàn bộ chiều rộng */
+    .posts {
+        order: 1;
+        width: 100%;
+    }
+
+    /* Phần phân trang sẽ ở giữa */
+    .pagination {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+    }
+
+    /* Điều chỉnh kích thước bài viết và hình ảnh cho phù hợp với mobile */
+    .post img {
+        width: 100%;
+    }
+
+    .post {
+        width: 100%;
+    }
+}
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="posts" id="post-list">
+        <!-- Danh sách bài viết sẽ được thêm vào đây bằng JavaScript -->
+    </div>
+
+    <div class="info">
+        <img src="https://via.placeholder.com/300x200" alt="Image">
+        <p><strong>QUYỀN TRẺ EM</strong></p>
+        <p>Bảo vệ quyền trẻ em và cung cấp các dịch vụ hỗ trợ cho trẻ em.</p>
+
+        <div class="topics">
+            <p>Xem bài viết theo chủ đề</p>
+            <button>Chủ đề 1</button>
+            <button>Chủ đề 2</button>
+            <button>Chủ đề 3</button>
+            <button>Khác</button>
+        </div>
+
+        <div class="reference">
+            <p>Tham khảo thêm</p>
+            <ul>
+                <li>Luật bảo vệ quyền trẻ em</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- Phần chuyển trang -->
+<div class="pagination">
+    <button class="arrow" id="prev">&#x2190;</button>
+    <button class="page" data-page="1">1</button>
+    <button class="page" data-page="2">2</button>
+    <button class="page" data-page="3">3</button>
+    <button class="page" data-page="4">4</button>
+    <button class="page" data-page="5">5</button>
+    <button class="page" data-page="6">6</button>
+    <button class="page" data-page="7">7</button>
+    <button class="arrow" id="next">&#x2192;</button>
+</div>
+
+<script>
+    const postsPerPage = 8;
+
+    // Danh sách bài viết (bao gồm tiêu đề, nội dung phụ, và hình ảnh)
+    const posts = [
+        {title: "Bài viết 1", subtitle: "Nội dung phụ bài viết 1", image: "https://via.placeholder.com/80"},
+        {title: "Bài viết 2", subtitle: "Nội dung phụ bài viết 2", image: "https://via.placeholder.com/80"},
+        {title: "Bài viết 3", subtitle: "Nội dung phụ bài viết 3", image: "https://via.placeholder.com/80"},
+        {title: "Bài viết 4", subtitle: "Nội dung phụ bài viết 4", image: "https://via.placeholder.com/80"},
+        {title: "Bài viết 5", subtitle: "Nội dung phụ bài viết 5", image: "https://via.placeholder.com/80"},
+        {title: "Bài viết 6", subtitle: "Nội dung phụ bài viết 6", image: "https://via.placeholder.com/80"},
+        {title: "Bài viết 7", subtitle: "Nội dung phụ bài viết 7", image: "https://via.placeholder.com/80"},
+        {title: "Bài viết 8", subtitle: "Nội dung phụ bài viết 8", image: "https://via.placeholder.com/80"},
+        {title: "Bài viết 9", subtitle: "Nội dung phụ bài viết 9", image: "https://via.placeholder.com/80"},
+        {title: "Bài viết 10", subtitle: "Nội dung phụ bài viết 10", image: "https://via.placeholder.com/80"}
+    ];
+
+    const totalPages = Math.ceil(posts.length / postsPerPage);
+    let currentPage = 1;
+
+    // Hàm để hiển thị danh sách bài viết cho trang hiện tại
+    function displayPosts(page) {
+        const postList = document.getElementById('post-list');
+        postList.innerHTML = ''; // Xóa nội dung cũ
+
+        const start = (page - 1) * postsPerPage;
+        const end = start + postsPerPage;
+        const currentPosts = posts.slice(start, end);
+
+        currentPosts.forEach(post => {
+            const postDiv = document.createElement('div');
+            postDiv.classList.add('post');
+
+            // Thêm hình ảnh
+            const postImg = document.createElement('img');
+            postImg.src = post.image;
+
+            // Tạo khối nội dung
+            const postContent = document.createElement('div');
+            postContent.classList.add('post-content');
+
+            // Thêm tiêu đề
+            const postTitle = document.createElement('div');
+            postTitle.classList.add('post-title');
+            postTitle.textContent = post.title;
+
+            // Thêm nội dung phụ
+            const postSubtitle = document.createElement('div');
+            postSubtitle.classList.add('post-subtitle');
+            postSubtitle.textContent = post.subtitle;
+
+            postContent.appendChild(postTitle);
+            postContent.appendChild(postSubtitle);
+            postDiv.appendChild(postImg);
+            postDiv.appendChild(postContent);
+
+            postList.appendChild(postDiv);
+        });
+    }
+
+    // Hàm để cập nhật trang hiện tại
+    function updatePagination(page) {
+        currentPage = parseInt(page);
+        displayPosts(currentPage);
+
+        document.querySelectorAll('.pagination button.page').forEach(p => p.classList.remove('active'));
+        document.querySelector(`.pagination button.page[data-page="${currentPage}"]`).classList.add('active');
+    }
+
+    // Khởi tạo danh sách bài viết và phần chuyển trang
+    document.querySelectorAll('.pagination button.page').forEach(pageButton => {
+        pageButton.addEventListener('click', () => {
+            updatePagination(pageButton.dataset.page);
+        });
+    });
+
+    document.getElementById('prev').addEventListener('click', () => {
+        if (currentPage > 1) {
+            updatePagination(currentPage - 1);
+        }
+    });
+
+    document.getElementById('next').addEventListener('click', () => {
+        if (currentPage < totalPages) {
+            updatePagination(currentPage + 1);
+        }
+    });
+
+    // Mặc định hiển thị trang 1
+    updatePagination(1);
+</script>
+
+</body>
+</html>

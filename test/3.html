@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quyền Trẻ Em</title>
+    <style>
+        /* Reset CSS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Container chính */
+        .container {
+            display: grid;
+            grid-template-rows: auto 1fr auto; /* Header, nội dung chính, footer */
+            grid-template-columns: 1fr;
+            min-height: 100vh; /* Độ cao tối thiểu bằng chiều cao màn hình */
+        }
+
+        /* Header */
+        .header {
+            display: grid;
+            grid-template-columns: 1fr 3fr 1fr; /* Chia logo, menu, và tìm kiếm */
+            background-color: red;
+            padding: 10px;
+            color: white;
+        }
+
+        .logo {
+            text-align: left;
+        }
+
+        .menu ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+        }
+
+        .menu ul li {
+            margin: 0 15px;
+        }
+
+        .menu ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .search {
+            text-align: right;
+        }
+
+        /* Nội dung chính */
+        .main-content {
+            display: grid;
+            grid-template-columns: 2fr 3fr; /* Danh sách bài viết 2 phần, phần featured 3 phần */
+            grid-gap: 20px;
+            padding: 20px;
+        }
+
+        /* Danh sách bài viết */
+        .articles {
+            display: grid;
+            grid-template-rows: repeat(8, 1fr); /* 8 bài viết */
+            grid-gap: 10px;
+        }
+
+        .articles div {
+            background-color: lightgray;
+            padding: 10px;
+        }
+
+        /* Phần featured (hình ảnh và nội dung bên phải) */
+        .featured {
+            display: grid;
+            grid-template-rows: auto auto auto auto;
+            gap: 10px;
+        }
+
+        .featured img {
+            width: 100%;
+            height: auto;
+        }
+
+        .topics button {
+            margin-right: 10px;
+        }
+
+        /* Phân trang */
+        .pagination {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .pagination button {
+            margin-right: 5px;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: darkred;
+            color: white;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Responsive cho màn hình nhỏ */
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr; /* Chuyển về một cột khi màn hình nhỏ */
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">Logo</div>
+            <nav class="menu">
+                <ul>
+                    <li><a href="#">Trang chủ</a></li>
+                    <li><a href="#">Khám phá</a></li>
+                    <li><a href="#">Sự kiện</a></li>
+                    <li><a href="#">Tư vấn và hỗ trợ</a></li>
+                    <li><a href="#">Về chúng tôi</a></li>
+                </ul>
+            </nav>
+            <div class="search">Tìm kiếm</div>
+        </header>
+
+        <!-- Danh sách bài viết và phần featured -->
+        <main class="main-content">
+            <div class="articles">
+                <div>Bài viết 1</div>
+                <div>Bài viết 2</div>
+                <div>Bài viết 3</div>
+                <div>Bài viết 4</div>
+                <div>Bài viết 5</div>
+                <div>Bài viết 6</div>
+                <div>Bài viết 7</div>
+                <div>Bài viết 8</div>
+            </div>
+            <div class="featured">
+                <img src="image.jpg" alt="Children image">
+                <p>Quyền trẻ em: Các bài viết về thông tin giáo dục và bảo vệ quyền trẻ em.</p>
+                <div class="topics">
+                    <button>Chủ đề 1</button>
+                    <button>Chủ đề 2</button>
+                    <button>Chủ đề 3</button>
+                    <button>Khác</button>
+                </div>
+                <div class="reference">
+                    <p>Tham khảo thêm:</p>
+                    <a href="#">Luật bảo vệ quyền trẻ em</a>
+                </div>
+            </div>
+        </main>
+
+        <!-- Phân trang -->
+        <div class="pagination">
+            <button>1</button>
+            <button>2</button>
+            <button>3</button>
+            <!-- thêm nút phân trang nếu cần -->
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div>Thông tin liên hệ</div>
+            <div>Địa chỉ</div>
+            <div>Các trang mxh</div>
+        </footer>
+    </div>
+</body>
+
+</html>
