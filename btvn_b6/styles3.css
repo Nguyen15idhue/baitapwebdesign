@@ -1,0 +1,84 @@
+        /* Tổng quan về giao diện */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Nút menu ba gạch ngang */
+        .menu-icon {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            font-size: 30px;
+            cursor: pointer;
+            z-index: 1000;
+        }
+
+        /* Layer màu đen chứa menu */
+        .menu-overlay {
+            position: fixed;
+            top: 0;
+            right: 0;
+            height: 100%;
+            width: 0;
+            background-color: rgba(0, 0, 0, 0.9);
+            transition: width 0.5s;
+            z-index: 999;
+            overflow: hidden;
+        }
+
+        /* Hiệu ứng trước và sau cho menu */
+        .menu-overlay::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            opacity: 0;
+            transition: opacity 0.5s;
+        }
+
+        /* Khi menu đang mở */
+        .menu-overlay.active {
+            width: 100%;
+        }
+
+        .menu-overlay.active::before {
+            opacity: 1; /* Hiện hiệu ứng nền tối khi menu mở */
+        }
+
+        /* Nội dung menu bên trong layer */
+        .menu-content {
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+            text-align: center;
+            width: 100%;
+        }
+
+        .menu-content a {
+            display: block;
+            font-size: 25px;
+            color: white;
+            text-decoration: none;
+            margin: 15px 0;
+            transition: color 0.3s;
+        }
+
+        .menu-content a:hover {
+            color: gray;
+        }
+
+        /* Nút X để đóng menu */
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 40px;
+            font-size: 30px;
+            cursor: pointer;
+            color: white;
+        }
