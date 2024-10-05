@@ -14,7 +14,7 @@ body {
     gap: 50px;
     align-items: center;
     padding: 10px 20px;
-    background-color: rgba(10, 30, 49, 0.8); /* Màu nền với độ trong suốt */
+    background-color: rgba(10, 30, 49, 0.5); /* Màu nền với độ trong suốt */
     backdrop-filter: blur(10px); /* Hiệu ứng làm mờ */
     color: #fff;
     list-style-type: none;
