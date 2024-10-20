@@ -5,11 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trang cá nhân và Bài tập</title>
     <link rel="stylesheet" href="css/styles.css"> <!-- Liên kết đến file CSS -->
-    <script src="js/scripts.js"></script>
+    <script src="js/scripts.js" defer></script> <!-- Thêm defer để tải JavaScript sau khi DOM đã sẵn sàng -->
+    
 </head>
 <body>
     <!-- Menu điều hướng -->
     <nav class="menu">
+        <div class="menu-toggle" id="mobile-menu">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
         <ul>
             <li><a href="#trangcanhan" onclick="showSection('trangcanhan')">Trang cá nhân</a></li>
             <li><a href="#baitap" onclick="showSection('baitap')">Bài tập</a></li>
@@ -79,7 +85,6 @@
             <a class="btn" href="https://nguyen15idhue.github.io/baitapwebdesign/btvn_b6/bai2.html">BTVN 2</a>
             <a class="btn" href="https://nguyen15idhue.github.io/baitapwebdesign/btvn_b6/bai3.html">BTVN 3</a>
             <a class="btn" href="#">BTVN 4</a>
-
         </div>
         <p>Bài tập buổi 7</p>
         <div class="button-container">
@@ -91,8 +96,34 @@
             <a class="btn" href="https://nguyen15idhue.github.io/baitapwebdesign/bt_b8/2.html">BTVN 2</a>
             <a class="btn" href="https://nguyen15idhue.github.io/baitapwebdesign/bt_b8/3.html">BTVN 3</a>
         </div>
+        <p>Bài tập buổi 9</p>
+        <div class="button-container">
+            <a class="btn" href="https://nguyen15idhue.github.io/baitapwebdesign/btvn_b9/b4.html">BTVN 4</a>
+            <a class="btn" href="https://nguyen15idhue.github.io/baitapwebdesign/btvn_b9/b5.html">BTVN 5</a>
+            <a class="btn" href="https://nguyen15idhue.github.io/baitapwebdesign/btvn_b9/b6.html">BTVN 6</a>
+        </div>
+        <p>Bài tập buổi 10</p>
+        <div class="button-container">
+            <a class="btn" href="https://nguyen15idhue.github.io/baitapwebdesign/btvn_b10/b2.html">BTVN 2</a>
+            <a class="btn" href="#">BTVN 3</a>
     </div>
 
-    
+    <script>
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                section.style.display = 'none'; // Ẩn tất cả các phần
+            });
+            document.getElementById(sectionId).style.display = 'block'; // Hiện phần được chọn
+        }
+
+        // Xử lý sự kiện cho menu di động
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navLinks = document.querySelector('.menu ul');
+
+        mobileMenu.addEventListener('click', () => {
+            navLinks.classList.toggle('active'); // Thêm hoặc xóa class active
+        });
+    </script>
 </body>
 </html>

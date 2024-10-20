@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đổi CSS bằng JavaScript</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+            transition: background-color 0.5s; /* Hiệu ứng chuyển đổi màu nền */
+        }
+        .text {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .color-button, .reset-button {
+            padding: 10px 20px;
+            font-size: 18px;
+            border: 1px solid #333;
+            cursor: pointer;
+            margin: 5px; /* Thêm khoảng cách giữa các nút */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="text" id="text">đổi màu tôi đi</div>
+    <button class="color-button" onclick="changeColor('green')">xanh</button>
+    <button class="reset-button" onclick="resetColor()">Trở lại</button>
+
+    <script>
+        // Hàm để thay đổi màu
+        function changeColor(color) {
+            document.getElementById("text").style.color = color; // Đổi màu chữ
+            document.body.style.backgroundColor = color; // Đổi màu nền
+        }
+
+        // Hàm để trở lại màu nền và chữ ban đầu
+        function resetColor() {
+            document.getElementById("text").style.color = "black"; // Màu chữ ban đầu
+            document.body.style.backgroundColor = "white"; // Màu nền ban đầu
+        }
+    </script>
+
+</body>
+</html>

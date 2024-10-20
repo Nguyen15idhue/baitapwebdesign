@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slideshow Hình Ảnh</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+        .slideshow-container {
+            position: relative;
+            max-width: 600px;
+            max-height: 400px;
+            margin: auto;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            overflow: hidden;
+            background-color: white;
+        }
+        .slides {
+            display: none;
+        }
+        img {
+            width: 100%;
+        }
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+        }
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+        .prev:hover, .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+        .caption {
+            color: #333;
+            padding: 8px 12px;
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.7);
+        }
+    </style>
+</head>
+<body>
+
+<h2 style="text-align:center">Slideshow Hình Ảnh</h2>
+
+<div class="slideshow-container">
+
+    <div class="slides">
+        <img src="https://cdn.mobilecity.vn/mobilecity-vn/images/2024/04/hinh-nen-vu-tru-top-100.jpg.webp" alt="Hình 1">
+        <div class="caption">Hình 1</div>
+    </div>
+
+    <div class="slides">
+        <img src="https://cdn.mobilecity.vn/mobilecity-vn/images/2024/04/hinh-nen-vu-tru-dai-ngan-ha-1.jpg.webp" alt="Hình 2">
+        <div class="caption">Mô tả cho Hình 2</div>
+    </div>
+
+    <div class="slides">
+        <img src="https://cdn.mobilecity.vn/mobilecity-vn/images/2024/04/hinh-nen-vu-tru-dai-ngan-ha-5.jpg.webp" alt="Hình 3">
+        <div class="caption">Hình 3</div>
+    </div>
+
+    <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+    <a class="next" onclick="changeSlide(1)">&#10095;</a>
+</div>
+
+<script>
+    let slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+        const slides = document.getElementsByClassName("slides");
+        for (let i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {slideIndex = 1}    
+        slides[slideIndex - 1].style.display = "block";  
+        setTimeout(showSlides, 3000); // Chuyển đổi sau 3 giây
+    }
+
+    function changeSlide(n) {
+        slideIndex += n;
+        const slides = document.getElementsByClassName("slides");
+        if (slideIndex > slides.length) {slideIndex = 1}    
+        if (slideIndex < 1) {slideIndex = slides.length}
+        for (let i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+        }
+        slides[slideIndex - 1].style.display = "block";  
+    }
+</script>
+
+</body>
+</html>
