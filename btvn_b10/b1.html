@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý thông tin cá nhân</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #ff8c00;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-bottom: 15px;
+        }
+
+        .form-group input {
+            width: 22%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus {
+            border-color: #ff8c00;
+            outline: none;
+        }
+
+        .button-group {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .button-group .btn {
+            background-color: #ff8c00;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 15px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .button-group .btn:hover {
+            background-color: #e07b00;
+        }
+
+        .sort {
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Quản lý thông tin cá nhân</h1>
+        <div class="form-group">
+            <input type="text" id="id" placeholder="ID">
+            <input type="text" id="name" placeholder="Tên">
+            <input type="text" id="date" placeholder="dd/mm/yyyy">
+            <input type="text" id="job" placeholder="Công việc">
+        </div>
+        <input type="text" id="contact" placeholder="Liên lạc">
+        <div class="button-group">
+            <button class="btn add" onclick="addEntry()">Thêm</button>
+            <button class="btn pin" onclick="pinJob()">Ghim công việc</button>
+            <button class="btn unpin" onclick="unpinJob()">Hủy ghim công việc</button>
+            <button class="btn delete" onclick="deleteSelected()">Xóa mục đã chọn</button>
+            <select class="sort" id="sortOptions">
+                <option value="id">Sắp xếp theo ID</option>
+                <!-- Add other sort options if needed -->
+            </select>
+        </div>
+    </div>
+
+    <script>
+        function addEntry() {
+            const id = document.getElementById('id').value;
+            const name = document.getElementById('name').value;
+            const date = document.getElementById('date').value;
+            const job = document.getElementById('job').value;
+            const contact = document.getElementById('contact').value;
+
+            if (id && name && date && job && contact) {
+                alert(`Thêm thông tin: \nID: ${id}\nTên: ${name}\nNgày: ${date}\nCông việc: ${job}\nLiên lạc: ${contact}`);
+                // Clear input fields
+                document.getElementById('id').value = '';
+                document.getElementById('name').value = '';
+                document.getElementById('date').value = '';
+                document.getElementById('job').value = '';
+                document.getElementById('contact').value = '';
+            } else {
+                alert('Vui lòng điền đầy đủ thông tin!');
+            }
+        }
+
+        function pinJob() {
+            alert('Công việc đã được ghim!');
+        }
+
+        function unpinJob() {
+            alert('Công việc đã được hủy ghim!');
+        }
+
+        function deleteSelected() {
+            alert('Mục đã được xóa!');
+        }
+    </script>
+</body>
+</html>
