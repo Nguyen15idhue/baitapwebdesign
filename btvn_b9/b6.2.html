@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Các phép toán</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f4f8;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .calculator-container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+        }
+
+        h1 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #333;
+        }
+
+        .operation {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        input[type="text"] {
+            width: 50px;
+            padding: 5px;
+            font-size: 16px;
+            text-align: center;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #results {
+            margin-top: 20px;
+            font-weight: bold;
+            color: #555;
+            padding-top: 10px;
+            border-top: 2px solid #ddd;
+            text-align: center;
+        }
+
+        .operation label {
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator-container">
+        <h1>Các phép toán</h1>
+        
+        <div class="operation">
+            <label for="add1">Phép cộng:</label>
+            <input type="text" id="add1"> + 
+            <input type="text" id="add2"> = 
+            <input type="text" id="addResult" disabled>
+            <button onclick="calculate('add')">Tính</button>
+        </div>
+        
+        <div class="operation">
+            <label for="sub1">Phép trừ:</label>
+            <input type="text" id="sub1"> - 
+            <input type="text" id="sub2"> = 
+            <input type="text" id="subResult" disabled>
+            <button onclick="calculate('sub')">Tính</button>
+        </div>
+        
+        <div class="operation">
+            <label for="mul1">Phép nhân:</label>
+            <input type="text" id="mul1"> * 
+            <input type="text" id="mul2"> = 
+            <input type="text" id="mulResult" disabled>
+            <button onclick="calculate('mul')">Tính</button>
+        </div>
+        
+        <div class="operation">
+            <label for="div1">Phép chia:</label>
+            <input type="text" id="div1"> / 
+            <input type="text" id="div2"> = 
+            <input type="text" id="divResult" disabled>
+            <button onclick="calculate('div')">Tính</button>
+        </div>
+
+        <div id="results">Các phép toán vừa thực hiện</div>
+    </div>
+
+    <script>
+        function calculate(operation) {
+            let num1, num2, result;
+            switch (operation) {
+                case 'add':
+                    num1 = parseFloat(document.getElementById('add1').value);
+                    num2 = parseFloat(document.getElementById('add2').value);
+                    result = num1 + num2;
+                    document.getElementById('addResult').value = result;
+                    break;
+                case 'sub':
+                    num1 = parseFloat(document.getElementById('sub1').value);
+                    num2 = parseFloat(document.getElementById('sub2').value);
+                    result = num1 - num2;
+                    document.getElementById('subResult').value = result;
+                    break;
+                case 'mul':
+                    num1 = parseFloat(document.getElementById('mul1').value);
+                    num2 = parseFloat(document.getElementById('mul2').value);
+                    result = num1 * num2;
+                    document.getElementById('mulResult').value = result;
+                    break;
+                case 'div':
+                    num1 = parseFloat(document.getElementById('div1').value);
+                    num2 = parseFloat(document.getElementById('div2').value);
+                    if (num2 !== 0) {
+                        result = num1 / num2;
+                    } else {
+                        result = "Không thể chia cho 0";
+                    }
+                    document.getElementById('divResult').value = result;
+                    break;
+            }
+
+            let resultsDiv = document.getElementById('results');
+            let newOperation = document.createElement('div');
+            newOperation.innerText = `Kết quả ${operation}: ${num1} ${getOperator(operation)} ${num2} = ${result}`;
+            resultsDiv.appendChild(newOperation);
+        }
+
+        function getOperator(operation) {
+            switch (operation) {
+                case 'add': return '+';
+                case 'sub': return '-';
+                case 'mul': return '*';
+                case 'div': return '/';
+                default: return '';
+            }
+        }
+    </script>
+</body>
+</html>
